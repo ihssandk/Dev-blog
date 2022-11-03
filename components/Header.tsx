@@ -22,8 +22,8 @@ const Header = () => {
                         <Image 
                         src="/../public/logo.png"
                         alt="THRUTH logo"
-                        width= {120}
-                        height={120}/>
+                        width= {110}
+                        height={110}/>
                     </span>
                 </Link>
 
