@@ -14,19 +14,23 @@ const Header = () => {
           .then((newCatgories : any)=> setCategories(newCatgories))
     }, [])
   return (
-    <div className ="container shadow-[5px_5px_0px_0px_rgba(201,233,255,0.8)]  mx-auto px-10 mb-8">
+    <div className ="container border-b border-zinc-700 mx-auto px-10 mb-8">
         <div className=" w-full inline-block  py-8">
             <div className="md:float-left block">
                 <Link href ='/'>
                     <span className="cursor-pointer font-bold text-5xl  font-syncopate drop-shadow-lg shadow-black text-[#a2b4c6]">
-                        THRuth
+                        <Image 
+                        src="/../public/logo.png"
+                        alt="THRUTH logo"
+                        width= {120}
+                        height={120}/>
                     </span>
                 </Link>
 
             </div>
-            <div className="hidden md:float-left md:contents">
+            <div className="hidden md:float-left md:contents ">
                 {categories.map((category)=>(<Link key={category.slug} href={`/category/${category.slug}`}>
-                    <span className="md:float-right mt-2 align-middle text-[#676e75] hover:text-[#929aa1] ml-4  font-semibold cursor-pointer">{category.name}</span>
+                    <span className="md:float-right mt-6 align-middle text-3xl text-[#8f979e] hover:text-[#98bcdc] ml-4 border-x-stone-600 font-bold cursor-pointer">{category.name}</span>
                 </Link>))}
             </div>
 
