@@ -14,7 +14,7 @@ const Header = () => {
           .then((newCatgories : any)=> setCategories(newCatgories))
     }, [])
   return (
-    <div className ="container border-b border-zinc-700 mx-auto px-10 mb-8">
+    <div className ="container border-b border-zinc-700 mx-auto px-10 mb-8 bg-slate-300/50">
         <div className=" w-full inline-block  py-8">
             <div className="md:float-left block">
                 <Link href ='/'>

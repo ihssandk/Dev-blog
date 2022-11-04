@@ -36,7 +36,6 @@ export async function getStaticProps({ params }:any) {
 
   return {
     props: { articles },
-    fallback:false,
   };
 }
 
