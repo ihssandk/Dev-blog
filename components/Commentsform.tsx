@@ -6,10 +6,10 @@ const Commentsform = ({slug}: any) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const commentEl  = useRef<HTMLInputElement >();
-  const nameEl = useRef<HTMLInputElement  >();
-  const emailEl = useRef<HTMLInputElement >();
-  const storeDataEl = useRef<HTMLInputElement >();
+  const commentEl  = useRef<HTMLTextAreaElement>();
+  const nameEl = useRef<HTMLInputElement>();
+  const emailEl = useRef<HTMLInputElement>();
+  const storeDataEl = useRef<HTMLInputElement>();
   useEffect (()=>{
       nameEl.current.value = window.localStorage.getItem('name');
       emailEl.current.value = window.localStorage.getItem('email');
@@ -43,7 +43,7 @@ const Commentsform = ({slug}: any) => {
         })
   }
     return (
-    <div className="bg-gray-200 p-8 pb-12 mb-8 shadow-[5px_5px_0px_0px_indigo]">
+    <div className="bg-gray-200 p-8 pb-12 mb-8 shadow-[5px_5px_0px_0px_blue]">
       <h3 className="text-xl mb-8 font-semibold border-b border-sky-500 pb-4">Comment on this article</h3>
       <div className="grid  grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <textarea 
@@ -87,14 +87,14 @@ const Commentsform = ({slug}: any) => {
       {error && <p className="text-xs text-red-500">All Fields are required</p>}
       <div className="mt-8">
           <button
-          className="transition duration-500 ease rounded-full hover:bg-blue-900 inline-block bg-cyan-300 text-lg text-white px-6 p-2 cursor-pointer"
+          className="transition duration-500 ease shadow-[5px_5px_0px_0px_black] hover:bg-gray-900 inline-block bg-blue-600 text-lg text-white px-6 p-2 cursor-pointer"
           type="button"
           onClick={handleCommentSubmission}>
             Send Comment
           </button>
           {showSuccessMessage && (
                     <span className="text-xl float-right  mt-3 text-green-400">
-                      We will review your comment and post it ASAP. Did you forget anything?
+                      We will review your comment and post it ASAP..
                     </span>
           )}
       </div>
