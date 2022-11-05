@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const ArticleCard = ({article}:any) => {
   return (
-    <div className="bg-white shadow-[5px_5px_0px_0px_rgba(201,233,255,0.8)]  p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-white shadow-[5px_5px_0px_blue]  p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
       <img src ={article.featuredImage.url}
       alt={article.title}
