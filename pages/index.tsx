@@ -7,7 +7,7 @@ import {FeaturedArticles}  from '../sections';
 
 const Home: NextPage = ({articles} :any) => {
   return (
-    <div className="container mx-auto  mb-8">
+    <div className="container mx-auto mb-8">
       <Head>
         <title>THRUTH Blog- Latest articles - All you need to know about tech...</title>
         <link rel="icon" href="/favicon.ico" />
@@ -26,7 +26,6 @@ const Home: NextPage = ({articles} :any) => {
           <div className="lg:sticky relative top-8">
             <ArticleWidget />
             <Categories />
-            <FeaturedArticles />
           </div>
 
         </div>

@@ -14,7 +14,7 @@ const Header = () => {
           .then((newCatgories : any)=> setCategories(newCatgories))
     }, [])
   return (
-    <div className ="container border-b border-zinc-700 mx-auto px-10 mb-8 bg-slate-300/50">
+    <div className ="container bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 border border-gray-200 mx-auto mb-8 px-5">
         <div className=" w-full inline-block  py-8">
             <div className="md:float-left block">
                 <Link href ='/'>
@@ -22,15 +22,15 @@ const Header = () => {
                         <Image 
                         src="/../public/logo.png"
                         alt="THRUTH logo"
-                        width= {110}
-                        height={110}/>
+                        width= {250}
+                        height={250}/>
                     </span>
                 </Link>
 
             </div>
             <div className="hidden md:float-left md:contents ">
                 {categories.map((category)=>(<Link key={category.slug} href={`/category/${category.slug}`}>
-                    <span className="md:float-right mt-6 align-middle text-3xl text-[#8f979e] hover:text-[#98bcdc] ml-4 border-x-stone-600 font-bold cursor-pointer">{category.name}</span>
+                    <span className="md:float-right mt-6 align-middle text-2xl text-[#c2c3c4] uppercase  hover:text-[#ffffff] ml-4 border-x-stone-600 font-bold cursor-pointer">{category.name}</span>
                 </Link>))}
             </div>
 

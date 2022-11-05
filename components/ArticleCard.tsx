@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const ArticleCard = ({article}:any) => {
   return (
-    <div className="bg-white shadow-[5px_5px_0px_blue]  p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
       <img src ={article.featuredImage.url}
       alt={article.title}
@@ -13,8 +13,8 @@ const ArticleCard = ({article}:any) => {
       />
       </div>
       <div>
-        <h1 className="transition duration-700 text-center mb-8 cursor-pointer
-        hover:text-gray-300 text-3xl font-semibold">
+        <h1 className="transition duration-700 text-white text-center mb-8 cursor-pointer
+        hover:text-gray-400 text-3xl font-semibold">
           <Link href={`/article/${article.slug}`}>
             {article.title}
           </Link>
@@ -28,7 +28,7 @@ const ArticleCard = ({article}:any) => {
             src={article.author.image.url}/>
             <p className="inline align-middle font-bold text-gray-700 ml-2 text-lg">{article.author.name}</p>
           </div>
-          <div className="font-medium text-gray-700">
+          <div className="font-medium text-gray-400">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="lightblue">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -38,7 +38,7 @@ const ArticleCard = ({article}:any) => {
           </div>
         </div>
       </div>
-      <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">{article.excerpt}</p>
+      <p className="text-center text-xl text-white font-semibold px-4 lg:px-20 mb-8">{article.excerpt}</p>
       <div className="text-center">
         <Link href={`/article/${article.slug}`}>
           <span className="transition duration-500 transform hover:-translate-y-2 inline-block text-lg shadow-lg  text-white bg-gray-400 px-8 py-1 rounded-r cursor-pointer"> Keep reading ...</span>
