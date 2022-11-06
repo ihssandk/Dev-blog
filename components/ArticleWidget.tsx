@@ -18,8 +18,8 @@ const ArticleWidget = ({categories, slug}: any) => {
   , [slug])
   
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
-        <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+    <div className="bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4 mb-8">
+        <h3 className="text-2xl border-b text-white pb-4 mb-8 font-semibold ">
             {slug? 'Related Articles': 'Recent Articles'}
         </h3>
         {relatedArticles.map((article)=>(
@@ -37,7 +37,7 @@ const ArticleWidget = ({categories, slug}: any) => {
                 {moment(article.createdAt).format('MM DD, YYYY')}
               </p>
               <Link key={article.title} className="font-semibold text-gray-500 cursor-pointer
-        hover:text-gray-300" href={`/article/${article.slug}`}>
+        hover:text-white" href={`/article/${article.slug}`}>
               {article.title}
               </Link>
             </div>
