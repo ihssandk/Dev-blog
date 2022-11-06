@@ -14,7 +14,7 @@ const Header = () => {
           .then((newCatgories : any)=> setCategories(newCatgories))
     }, [])
   return (
-    <div className ="container bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 border border-gray-200 mx-auto mb-8 px-5">
+    <div className ="container  mx-auto mb-8 px-5">
         <div className=" w-full inline-block  py-8">
             <div className="md:float-left block">
                 <Link href ='/'>
