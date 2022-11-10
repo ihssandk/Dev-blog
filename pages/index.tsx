@@ -9,7 +9,7 @@ const Home: NextPage = ({articles} :any) => {
   return (
     <div className="container mx-auto mb-8">
       <Head>
-        <title>THRUTH Blog- Latest articles - All you need to know about tech...</title>
+        <title>Digitalyos Tech-Blog- All you need to know about tech...</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FeaturedArticles />
