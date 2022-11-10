@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
-const graphqlAPI:string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT!;
+const graphqlAPI:string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
 export default async function asynchandler(req :any, res: any) {
   const graphQLClient = new GraphQLClient((graphqlAPI), {
