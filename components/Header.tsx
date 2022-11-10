@@ -21,7 +21,7 @@ const Header = () => {
                     <span className="cursor-pointer font-bold text-5xl  font-syncopate drop-shadow-lg shadow-black text-[#a2b4c6]">
                         <Image 
                         src={require('../public/logo.png')}
-                        alt="THRUTH logo"
+                        alt="digitalyos logo"
                         width= {250}
                         height={250}/>
                     </span>
