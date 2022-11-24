@@ -74,6 +74,7 @@ export const getArticleDetails = async (slug :any) => {
         slug
         content {
           raw
+          
         }
         categories {
           name
