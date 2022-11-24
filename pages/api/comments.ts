@@ -11,7 +11,7 @@ export default async function asynchandler(req :any, res: any) {
 
   const query = gql`
     mutation CreateComment($name: String!, $email: String!, $comment: String!, $slug: String!) {
-      createComment(data: {name: $name, email: $email, comment: $comment, article: {connect: {slug: $slug}}}) { id }
+      createComment(data: {name: $name, email: $email, comment: $comment, article: {connect: {slug: $slug}}}) returning { id }
     }
   `;
 try {
