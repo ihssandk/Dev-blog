@@ -25,7 +25,7 @@ const Commentsform = ({slug}: any) => {
         setError (true);
         return;
       }
-      const commentObj= {name,email,comment,slug}
+      const commentObj= {name,email,comment,slug};
       console.log(localStorage)
       if(storeData){
             window.localStorage.setItem('name', name);
@@ -45,16 +45,15 @@ const Commentsform = ({slug}: any) => {
     return (
     <div className="bg-gray-200 p-8 pb-12 mb-8 shadow-[5px_5px_0px_0px_blue]">
       <h3 className="text-xl mb-8 font-semibold border-b border-sky-500 pb-4">Comment on this article</h3>
-      <div className="grid  grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      <div className="grid  grid-cols-1 gap-4 mb-4">
         <textarea 
         ref={commentEl}
         className="p-4 outline-none w-full focus:ring-2 rounded-md focus:ring-gray-200 bg-gray-100 text-gray-700"
         placeholder="Comment"
         name='comment'
         />
-        
       </div>
-      <div className="grid grid-cols-1 gap-4 mb-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <input type="text"
         ref={nameEl}
         className="py-2 px-4 outline-none w-full focus:ring-2 rounded-md focus:ring-gray-200 bg-gray-100 text-gray-700"
@@ -62,15 +61,13 @@ const Commentsform = ({slug}: any) => {
         name='name'
          />
       
-      </div>
-      <div className="grid grid-cols-1 gap-4 mb-4">
       <input type="text"
         ref={emailEl}
         className="py-2 px-4 outline-none w-full focus:ring-2 rounded-md focus:ring-gray-200 bg-gray-100 text-gray-700"
         placeholder="Email"
         name='email'
-         />
-      </div>
+        />
+        </div>
       <div className="grid  grid-cols-1 gap-4 mb-4">
           <div className="ml-5">
             <input 
@@ -84,7 +81,7 @@ const Commentsform = ({slug}: any) => {
           </div>
 
       </div>
-      {error && <p className="text-xs text-red-500">All Fields are required</p>}
+      {error && <p className="text-xs text-red-800">Please make sure all the fields are filled out</p>}
       <div className="mt-8">
           <button
           className="transition duration-500 ease shadow-[5px_5px_0px_0px_black] hover:bg-gray-900 inline-block bg-blue-600 text-lg text-white px-6 p-2 cursor-pointer"

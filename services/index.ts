@@ -1,6 +1,6 @@
 import { request, gql } from 'graphql-request';
 
-const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT;
 
 export const getArticles = async () => {
   const query = gql`
@@ -74,7 +74,6 @@ export const getArticleDetails = async (slug :any) => {
         slug
         content {
           raw
-          
         }
         categories {
           name
