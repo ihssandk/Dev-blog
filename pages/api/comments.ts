@@ -1,11 +1,11 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
-const graphqlAPI:string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+const graphqlAPI:string = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT;
 
 export default async function asynchandler(req :any, res: any) {
   const graphQLClient = new GraphQLClient((graphqlAPI), {
     headers: {
-      authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`
+      authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`
     }
   });
 
