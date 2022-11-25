@@ -1,6 +1,6 @@
 import { request, gql } from 'graphql-request';
 
-const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT;
+const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
 export const getArticles = async () => {
   const query = gql`
@@ -108,41 +108,6 @@ export const getSimilarArticles = async (categories :any, slug :any) => {
 
   return result.articles;
 };
-
-// export const getAdjacentPosts = async (createdAt : any, slug : any) => {
-//   const query = gql`
-//     query GetAdjacentPosts($createdAt: DateTime!,$slug:String!) {
-//       next:posts(
-//         first: 1
-//         orderBy: createdAt_ASC
-//         where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}}
-//       ) {
-//         title
-//         featuredImage {
-//           url
-//         }
-//         createdAt
-//         slug
-//       }
-//       previous:posts(
-//         first: 1
-//         orderBy: createdAt_DESC
-//         where: {slug_not: $slug, AND: {createdAt_lte: $createdAt}}
-//       ) {
-//         title
-//         featuredImage {
-//           url
-//         }
-//         createdAt
-//         slug
-//       }
-//     }
-//   `;
-
-//   const result = await request(graphqlAPI, query, { slug, createdAt });
-
-//   return { next: result.next[0], previous: result.previous[0] };
-// };
 
 export const getCategoryArticle = async (slug : any) => {
   const query = gql`
