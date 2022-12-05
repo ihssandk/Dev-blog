@@ -2,7 +2,7 @@ import React from 'react';
 import {getArticles, getArticleDetails} from "../../services";
 import {ArticleDetail, Categories, ArticleWidget, Comments, Commentsform, Author} from '../../components';
 import {Loader} from '../../components';
-import {useRouter} from 'next/router'
+import {useRouter} from 'next/router';
 
 const ArticleDetails = ({article}: any) => {
   const router = useRouter ();
