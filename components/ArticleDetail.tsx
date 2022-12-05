@@ -1,13 +1,15 @@
-import React from 'react'
-import moment from "moment"
-import {RichText} from "@graphcms/rich-text-react-renderer"
+import React from 'react';
+import moment from "moment";
+import {RichText} from "@graphcms/rich-text-react-renderer";
 const ArticleDetail = ({article}) => {
+
+
   return (
     <div className="bg-white shadow-[5px_5px_0px_0px_rgba(201,233,255,0.8)] lg:p-8 pb-12 mb-8">
         <div className="relative overflow-hidden shadow-md mb-6">
             <img 
             src={article.featuredImage.url}
-            art={article.title}
+            alt={article.title}
             className="object-top h-full w-full"
             />
         </div>
@@ -32,7 +34,21 @@ const ArticleDetail = ({article}) => {
 
             </div>
             <h1 className="mb-8 text-3xl font-semibold">{article.title}</h1>
-          <RichText content = {article.content.raw.children} />
+          <RichText 
+          content = {article.content.raw.children}
+          renderers = {{
+            h1: ({ children }) => <h1 className="mb-4 text-4xl text-gray-900 md:text-5xl lg:text-6xl">{children}</h1>,
+            h2: ({ children }) => <h2 className="mb-4 text-3xl text-gray-900 md:text-5xl lg:text-6xl">{children}</h2>,
+            ul: ({ children }) => <ul className="list-disc list-inside my-4 text-lg">{children}</ul>,
+            li: ({ children }) => <li className="my-2 text-lg ${bodyClasses} ${sharedClasses}">{children}</li>,
+            h4: ({ children }) => <h4 className="text-2xl">{children}</h4>,
+            h5: ({ children }) => <h5 className="text-xl">{children}</h5>,
+            h6: ({ children }) => <h6 className="text-large">{children}</h6>,
+            p: ({ children }) => <p className="my-4 text-lg">{children}</p>,
+            code: ({ children }) => <code className="bg-gray-100 dark:bg-blue-400 rounded-md p-1 text-sm ">{children}</code>,
+            code_block: ({ children }) => <pre className="bg-gray-100 dark:bg-blue-400 overflow-y-scroll rounded-md p-2 text-sm">{children}</pre>,
+            }}
+           />
         </div>
     </div>
   )
