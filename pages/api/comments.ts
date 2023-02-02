@@ -10,12 +10,11 @@ export default async function asynchandler(req :any, res: any) {
   });
 
   const query = gql`
-    mutation CreateComment($name: String!, $email: String!, $comment: String!, $slug: String!) {
-      createComment(
-        data: {name: $name, email: $email, comment: $comment, article: {connect: {slug: $slug}}}
-        )
-    }
+  mutation CreateComment($name: String!, $email: String!, $comment: String!, $slug: String!) {
+    createComment(data: {name: $name, email: $email, comment: $comment, post: {connect: {slug: $slug}}}) { id }
+  }
   `;
+  
 try {
     const result = await graphQLClient.request(query, {
       name: req.body.name,
